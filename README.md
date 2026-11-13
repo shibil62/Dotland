@@ -4,7 +4,7 @@
 
 **A Dynamic Island for Windows.**
 
-Lightweight. Private. No installer, no account, no internet needed.
+Lightweight (about 35–50 MB of RAM). Private. No account, no internet needed.
 
 ![Platform](https://img.shields.io/badge/platform-Windows%2010%20%7C%2011-blue)
 ![Built with](https://img.shields.io/badge/built%20with-C%23%20%7C%20.NET%208%20%7C%20WPF-purple)
@@ -26,21 +26,32 @@ is happening (music playing, a device connecting, your charger plugged in) and e
 when you want quick controls. It is inspired by the iPhone's Dynamic Island, built from scratch for Windows.
 
 No Electron, no browser engine, no cloud, no accounts.
+It stays light on your PC too: Dotland typically uses about **35 to 50 MB of RAM** while running.
 
 ## Download and install
 
-1. Go to the [**Releases** page](https://github.com/shibil62/Dotland/releases/latest).
-2. Download `Dotland-v1.0.0-win-x64.zip`.
-3. Right-click the zip and choose **Extract All**.
-4. Double-click `Dotland.exe`.
+Go to the [**Releases** page](https://github.com/shibil62/Dotland/releases/latest) and pick one:
 
-There is no installer, and you do **not** need to install .NET. Everything is bundled in the one file.
+### Option 1: Installer (recommended)
 
-> **Windows says "Windows protected your PC"?**
+1. Download `Dotland-Setup.msi`.
+2. Double-click it and follow the steps. Windows will ask for administrator permission, which is normal for installers.
+3. Start **Dotland** from the Start Menu or the Desktop shortcut.
+
+The installer adds Start Menu and Desktop shortcuts and appears in **Settings → Apps** so you can uninstall it like any other program.
+
+### Option 2: Portable
+
+1. Download `Dotland.exe`.
+2. Put it in any folder and double-click it. Nothing is installed.
+
+You do **not** need to install .NET. Everything is bundled.
+
+> **Windows says "Windows protected your PC" or "Unknown publisher"?**
 > Dotland is a new independent app and is not code-signed (certificates cost money).
 > Click **More info**, then **Run anyway**.
 
-**Requirements:** Windows 10 (version 1809 or newer) or Windows 11, 64-bit.
+**Requirements:** Windows 10 (version 1809 or newer) or Windows 11, 64-bit. Memory use is about 35 to 50 MB of RAM.
 
 ## How it works
 
@@ -114,18 +125,21 @@ Start Dotland a second time, and the settings window of the running island opens
 * A log file, `app.log`, is stored in the same folder to help with bug reports. It stays on your PC.
 * Clipboard history is kept in memory only.
 
-To remove everything, close Dotland, delete the folder you extracted, and delete `%APPDATA%\DotlandWin`.
-
 ## Updates
 
 New versions are posted on the [Releases](https://github.com/shibil62/Dotland/releases) page.
-Download the newest zip, close Dotland (settings window → **Quit island**), and replace the old `Dotland.exe`.
+
+* **Installer:** download the newest `Dotland-Setup.msi` and run it. It closes the running Dotland and replaces the old version automatically. Your settings are kept.
+* **Portable:** close Dotland (settings window → **Quit island**) and replace the old `Dotland.exe`.
 
 Click **Watch → Custom → Releases** at the top of this page to be notified of new versions.
 
 ## Uninstall
 
-Close Dotland, delete the folder, and turn off **Start with Windows** in settings first if you had it on.
+1. Open Dotland's settings and turn off **Start with Windows**.
+2. **Installer version:** open **Settings → Apps → Installed apps**, find **Dotland**, and click **Uninstall**.
+   **Portable version:** close Dotland and delete `Dotland.exe`.
+3. To remove saved settings and logs too, delete the folder `%APPDATA%\DotlandWin`.
 
 ## Known limitations
 
@@ -138,7 +152,7 @@ Close Dotland, delete the folder, and turn off **Start with Windows** in setting
 
 ## Roadmap
 
-- [ ] Windows installer
+- [x] Windows installer
 - [ ] More island styles and themes
 - [ ] Code-signed releases
 
